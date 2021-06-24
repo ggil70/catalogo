@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-        'name': "Registro de Grupo de Bienes Publicos",
+        'name': "Registro de Catalogo de Bienes Publicos",
         'version' : "13.1",
         'author' : "Beatriz Coronel",
         'website' : "",
@@ -11,12 +11,8 @@
                Catalogo Interno de Bienes Publicos
          """,
         'depends' : ['base',],
-        
-
-
-
         'data' : ['security/groups.xml',
-                
+                  'security/ir.model.access.csv',
                   'views/grupo_view.xml',
                   'views/clasificador_view.xml',
                   'views/modelo_view.xml',
@@ -26,8 +22,20 @@
                   'views/color_view.xml',
                   'views/material_view.xml',
                   'views/ubicacion_fisica_view.xml',
-                  'security/ir.model.access.csv',
-       
+                  'views/tipo_estatus_inventario_view.xml',
+                  
+                  'report/ubicacion_fisica_bien_template.xml',
+                  'report/clase_bien_template.xml',
+                  'report/grupo_bien_template.xml',
+                  'report/modelo_bien_template.xml',
+                  'report/color_bien_template.xml',
+                  'report/material_bien_template.xml', 
+                  'report/marca_bien_template.xml',
+                  'report/modelo_fab_bien_template.xml', 
+                  
+                  
+
+
                   'data/grupo.xml',
                   'data/clasificador_bien.xml',
                   'data/modelo.xml',
@@ -37,8 +45,7 @@
                   'data/color.xml',
                   'data/material.xml',
                   'data/ir.sequence.xml',
-                  #'report/clase_bien.xml',
-                  'report/clase_bien_template.xml', 
+                  
         # 'data/clasificador_bien.xml',
         # 'data/modelo.xml',
         # 'data/detalle_modelo.xml',

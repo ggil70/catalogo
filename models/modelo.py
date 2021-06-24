@@ -44,7 +44,7 @@ class modelo_bien(models.Model):
     _name = 'modelo_bien'
     #_rec_name = 'modelo_codigo'
     _rec_name = 'modelo_nombre'
-    _order = 'clasificador_id,id' 
+    _order = 'grupo_bien_id, clasificador_id, modelo_nombre' 
     #_rec_name = 'clasificador_id'
     
     modelo_codigo = fields.Char(string='Codigo del Modelo',size=3,
@@ -83,6 +83,9 @@ class modelo_bien(models.Model):
         codigo= ''
         codigo = self.grupo_bien_id.grupo_bien_codigo
         self.grupo_bien_codigo =  codigo
+        self.clasificador_id = ''
+        self.clasificador_codigo = ''
+        
       
     @api.onchange('clasificador_id')
     def onchange_clasificador(self):

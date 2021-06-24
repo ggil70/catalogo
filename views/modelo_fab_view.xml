@@ -13,11 +13,11 @@
 				<notebook>
 				  <page string="Modelo de Fabrica del Bien">	    
 					<group col="4" colspan="2">
-
-						<field name="marcas_id" select="0"/>
-						<field name="marcas_codigo" readonly="True" force_save="1"/>
 						<field name="modelo_fab_nombre" select="2"/>
 						<field name="modelo_fab_codigo" select="1"/>
+
+						<field name="marcas_id" select="0"/>
+						<field name="marcas_codigo" readonly="True" force_save="1" invisible="True"/>
    					</group>			
 				  </page>
 		       </notebook>
@@ -32,11 +32,10 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="modelo_fab">
-
-               <field name="marcas_id" select="0"/>
-				<field name="marcas_codigo" />
 				<field name="modelo_fab_nombre" select="2"/>
 				<field name="modelo_fab_codigo" select="1"/>
+                <field name="marcas_id" select="0"/>
+				<!--<field name="marcas_codigo" />-->
             </tree>
         </field>
     </record>

@@ -40,36 +40,15 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class material(models.Model):
-    """Registra los Materiales con que esta hecho el bien"""
-    _name = 'material'
-    #_rec_name = 'material_codigo'
-    _rec_name = 'material_nombre'
-    _order = "material_nombre"
-    
-    
-    material_codigo = fields.Char(string='Codigo del Material',
-    				  size=3,
-    				  required=True,
-                      default='New', help='Registra el Codigo del Material')
-    material_nombre = fields.Char(string='Nombre del Material',size=100,required=True,help='Registra el Nombre del Material')
- 
-    _sql_constraints = [('material_nombre', 'unique(material_nombre)', 'El Nombre debe se único!')]    
+       
 
 
+   #****************Tipos de Estatus de Inventario*******************#
+class tipo_estatus_inventario(models.Model):
+    """Registra los Tipos de estatus de inventario de bienes"""
+    _name = 'tipo_estatus_inventario'
+    _rec_name = 'nom_estatus'
+    nom_estatus = fields.Char('Nombre del Estatus del Inventario',size=100,required=True, help='Registra el Nombre del Movimiento')
+    cod_estatus = fields.Char('Codigo del Estatus del Inventario',size=100, required=True, help='Registra el Codigo del Estatus de Inventario')
+    _sql_constraints = [('nom_estatus', 'unique(nom_estatus)', 'El Nombre del Estatus del Inventario debe ser Unico!')]  
 
-
-
-
-
-    @api.model  
-    def create(self,vals):
-       if vals.get('material_codigo',  'New') == 'New' or '':
-          vals['material_codigo'] = self.env['ir.sequence'].next_by_code(
-           'self.material_codigo')  or 'New'
-          
-       result = super(material, self).create(vals)
-       return result 
-
-
-   

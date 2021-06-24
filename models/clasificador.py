@@ -49,7 +49,7 @@ class clasificador_bien(models.Model):
     #_rec_name = 'clasificador_codigo'
     _rec_name = 'clasificador_nombre'
     #_rec_name = 'grupo_bien_id '
-    _order = 'grupo_bien_id,id' 
+    _order = 'grupo_bien_id, clasificador_nombre asc' 
     
 
     clasificador_codigo = fields.Char(string='Codigo de la Clase',

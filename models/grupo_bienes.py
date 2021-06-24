@@ -44,14 +44,11 @@ _logger = logging.getLogger(__name__)
 class grupo_bien(models.Model):
     """Contiene la Informacion sobre los Grupos de Bienes"""
     _name = 'grupo_bien'
-    #_rec_name = 'grupo_bien_codigo'
     _rec_name = 'grupo_bien_nombre'
-    #_rec_name = 'grupo_bien_partidapre'
    
     grupo_bien_codigo = fields.Char(string='Codigo del Grupo',size=3,
                         help='Registra el Codigo del Grupo', 
                          default='New')
-        #grupo_bien_codigo = fields.Char(string='Codigo del Grupo',size=3,help='Registra el Codigo del Grupo')
     grupo_bien_nombre = fields.Char(string='Nombre del Grupo',size=100,required=True, help='Registra el Nombre del Grupo')
     grupo_bien_partidapre = fields.Char(string='Partida Presupuestaria', size=14, help='Registra la Partida Presupuestaria')
 
@@ -68,32 +65,4 @@ class grupo_bien(models.Model):
           
         result = super(grupo_bien, self).create(vals)
         return result 
-
-
-       # new_id = super(grupo_bien, self).create(vals)
-       # return new_id
-
-
-    # def create(self, vals):
-    #     if vals.get('grupo_bien_codigo', 'New') == 'New':
-    #             vals['grupo_bien_codigo'] = self.env['ir.sequence'].next_by_code('grupo_bien.grupo_bien_codigo')       
-
-    #     result = super(grupo_bien, self).create(vals)       
-
-    #     return result
-
-
-
-
-    #@api.multi
-    #def create_secuencia(self):
-    #    seq = self.env['ir.sequence'].next_by_code('grupo_bien_id_seq')
-    #    print seq
-        #self.grupo_bien_codigo = chr(seq)
-        
-       # return super(grupo_bien, self).create(vals)
-  
-
-#self.grupo_bien_codigo =  self.env['ir.sequence'].next_by_code('grupo_bien.grupo_bien_codigo')
-
 

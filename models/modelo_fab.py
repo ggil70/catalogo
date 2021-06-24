@@ -46,6 +46,7 @@ class modelo_fab(models.Model):
     #_rec_name = 'modelo_fab_codigo'
     _rec_name = 'modelo_fab_nombre'
     #_rec_name = 'marcas_id'
+    _order = 'marcas_id, modelo_fab_nombre'
     
    
     modelo_fab_codigo = fields.Char(string='Codigo del Modelo',

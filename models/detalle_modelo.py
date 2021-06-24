@@ -88,12 +88,22 @@ class detalle_modelo_bien(models.Model):
         codigo= ''
         codigo = self.grupo_bien_id.grupo_bien_codigo
         self.grupo_bien_codigo =  codigo
+        
+        self.clasificador_codigo = ''
+        self.clasificador_id = ''
+        
+        self.modelo_codigo = ''
+        self.modelo_id = ''
+        
       
     @api.onchange('clasificador_id')
     def onchange_clasificador(self):
         codigoc= ''
         codigoc = self.clasificador_id.clasificador_codigo
         self.clasificador_codigo =  codigoc
+        
+        self.modelo_codigo = ''
+        self.modelo_id = ''        
       
     @api.onchange('modelo_id')
     def onchange_modelo(self):

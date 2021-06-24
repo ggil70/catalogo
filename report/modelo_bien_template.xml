@@ -2,19 +2,17 @@
 <odoo>
 	<data>
         <report 
-            id = "accion_reporte_clasificador_bien"
-            string = "Listado Clase Del Bien."
-            model = "clasificador_bien"
+            id = "accion_reporte_modelo_bien"
+            string = "Listado Modelo Del Bien."
+            model = "modelo_bien"
             report_type = "qweb-html"
-            name = "catalogo.clase_bien_template"
+            name = "catalogo.modelo_bien_template"
             menu =" True" 
         />
 
-		<template id="clase_bien_template" name="Listado Clase Del Bien">
+		<template id="modelo_bien_template" name="Listado Modelo Del Bien">
 			<t t-call="web.html_container">
                 <t t-call="web.external_layout"> 
-					
-
                 <t t-set='linea' t-value='0'/>
                 <t t-set='swPagina' t-value='0'/>
                 <t t-set='nroRegistro' t-value='0'/>
@@ -24,7 +22,7 @@
                         <t t-set='nroRegistro' t-value='nroRegistro+1'/>
                         <t t-if='swPagina==0'>
                             <t t-set='swPagina' t-value='1'/>
-                                    <p style="font-size=14px; font-weight:700; text-align:center">Listado Clasificación Del Bien</p> 
+                                    <p style="font-size=12px; font-weight:700; text-align:center">Listado Modelo Del Bien</p> 
     						    <table  width="100%" style="border-collapse:collapse;">
     							    <tr>
     							        <td style="width:5%; background:#D7D7D7;text-align: center; border: 1px solid black;">
@@ -33,11 +31,14 @@
     							        <td style="width:8%; background:#D7D7D7;text-align: center; border: 1px solid black;">
     							    		 <p style="margin-top:1px; margin-bottom:1px; font-weight:700">Código</p> 
     							        </td>
-    							        <td style="width:37%; background:#D7D7D7;text-align: center; border: 1px solid black;">
-    							    		 <p style="margin-top:1px; margin-bottom:1px;font-weight:700">Clase del Bien</p> 
+    							        <td style="width:24%; background:#D7D7D7;text-align: center; border: 1px solid black;">
+    							    		 <p style="margin-top:1px; margin-bottom:1px;font-weight:700">Modelo del Bien</p> 
     							        </td>
-    							        <td style="width:50%;background:#D7D7D7;text-align: center; border: 1px solid black;">
+    							        <td style="width:40%;background:#D7D7D7;text-align: center; border: 1px solid black;">
     							    		 <p style="margin-top:1px; margin-bottom:1px;font-weight:700">Grupo Bien</p> 
+    							        </td>
+    							 	         <td style="width:23%;background:#D7D7D7;text-align: center; border: 1px solid black;">
+    							    		 <p style="margin-top:1px; margin-bottom:1px;font-weight:700">Clasificación Bien</p> 
     							        </td>
     							    </tr>
                                 </table>
@@ -46,17 +47,21 @@
     						    <table width="100%" style="border-collapse:collapse;">
     							    <tr>
     							        <td style="width:5%; text-align:center; border: 1px solid black;">
-    							    		<span t-esc='nroRegistro' style="font-size:12px"/>
+    							    		<span t-esc='nroRegistro' style="font-size:11px"/>
     							        </td >
 
     							        <td style="width:8%; text-align:center; border: 1px solid black;">
-    							    		<span t-field='o.clasificador_codigo' style="font-size:12px"/>
+    							    		<span t-field='o.modelo_codigo' style="font-size:11px"/>
     							        </td >
-                                        <td style="width:37%; border: 1px solid black;">
-    							    		 &amp;nbsp;<span t-field="o.clasificador_nombre" style="font-size:12px"/>
+    							        
+                                        <td style="width:24%; border: 1px solid black;">
+    							    		 &amp;nbsp;<span t-field="o.modelo_nombre" style="font-size:11px"/>
     							        </td>
-    							        <td style="width:50%; border: 1px solid black;">
-    							    		 &amp;nbsp;<span t-field="o.grupo_bien_id.grupo_bien_nombre" style="font-size:12px"/>
+    							        <td style="width:40%; border: 1px solid black;">
+    							    		 &amp;nbsp;<span t-field="o.grupo_bien_id.grupo_bien_nombre" style="font-size:11px"/>
+    							        </td>
+                                        <td style="width:23%; border: 1px solid black;">
+    							    		 &amp;nbsp;<span t-field="o.clasificador_id.clasificador_nombre" style="font-size:11px"/>
     							        </td>
     							    </tr>
                                 </table>

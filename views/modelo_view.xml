@@ -17,12 +17,12 @@
 				  <page string="Modelos de Bienes">	    
 					<group col="4" colspan="2">
 
-                        <field name="grupo_bien_id"/>
-                        <field name="grupo_bien_codigo" readonly="True" force_save="1"/>      
-						<field name="clasificador_id" select="0"/>
-                        <field name="clasificador_codigo" readonly="True" force_save="1"/>
                         <field name="modelo_codigo" readonly="True" force_save="1"/>
                         <field name="modelo_nombre" select="2"/>
+                        <field name="grupo_bien_id"/>
+                        <field name="grupo_bien_codigo" readonly="True" force_save="1" invisible="True"/>      
+						<field name="clasificador_id" select="0"/>
+                        <field name="clasificador_codigo" readonly="True" force_save="1" invisible="True"/>
 						
 					</group>
 				  </page>
@@ -38,12 +38,13 @@
         <field name="arch" type="xml">
             <tree string="modelo_bien">
 
-                <field name="grupo_bien_id"/>
-                <field name="grupo_bien_codigo"/>
-                <field name="clasificador_id"/>
-                <field name="clasificador_codigo"/>
                 <field name="modelo_codigo"/>
                 <field name="modelo_nombre"/>
+
+                <field name="grupo_bien_id"/>
+                <!--<field name="grupo_bien_codigo"/>-->
+                <field name="clasificador_id"/>
+                <!--<field name="clasificador_codigo"/>-->
                
             </tree>
         </field>

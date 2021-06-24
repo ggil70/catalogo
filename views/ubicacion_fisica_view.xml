@@ -47,60 +47,13 @@
     </record>
 	
 
-
-    <record model="ir.ui.view" id="view_tipo_estatus_inventario_form">
-        <field name="name">tipo_estatus_inventario.form</field>
-        <field name="model">tipo_estatus_inventario</field>
-        <field name="type">form</field>
-        <field name="arch" type="xml">
-            <form string="Tipo de Estatus de Inventario del Bien">
-              <sheet>
-                <notebook>
-                  <page string="Estatus de Inventario del Bien">     
-                    <group col="4" colspan="2">
-
-                        <field name="cod_estatus" />
-                        <field name="nom_estatus" select="2"/>
-                        
-                    </group>            
-                  </page>
-               </notebook>
-              </sheet>  
-            </form>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="view_tipo_estatus_inventario_tree">
-        <field name="name">tipo_estatus_inventario.tree</field>
-        <field name="model">tipo_estatus_inventario</field>
-        <field name="type">tree</field>
-        <field name="arch" type="xml">
-            <tree string="Estatus de Inventario del Bien">
-
-              <field name="cod_estatus" />
-              <field name="nom_estatus" select="2"/>
+        <menuitem
+            id = "menu_ubicacion_fisica"
+            parent="menu_c"
+            name=" Ubicación Física De Los Bienes"/>
             
-            </tree>
-        </field>
-    </record>
-
-     <record model="ir.actions.act_window" id="action_tipo_estatus_inventario">
-        <field name="name">Estatus de Inventario del Bien</field>
-        <field name="res_model">tipo_estatus_inventario</field>
-    
-        <field name="view_mode">tree,form</field>
-    </record>
-    
-
-
-
-
-	<menuitem name="Ubicación Física del Bien" id="menu_ubicacion_fisica"  parent="menu_cat_in"
-	 action="action_ubicacion_fisica" sequence="1000" />
-
-     <menuitem name="Tipos de Estatus de Inventario del Bien" id="menu_tipo_estatus_inventario"  parent="menu_cat_in"
-     action="action_tipo_estatus_inventario" />
-
+			<menuitem name="Ubicación Física del Bien" id="ubicacion_fisica_menu"  parent="menu_ubicacion_fisica"
+					  action="action_ubicacion_fisica" sequence="1000" />
 
 
 </data>

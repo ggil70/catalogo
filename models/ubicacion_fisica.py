@@ -68,12 +68,3 @@ class ubicacion_fisica(models.Model):
        return result 
 
 
-   #****************Tipos de Estatus de Inventario*******************#
-class tipo_estatus_inventario(models.Model):
-    """Registra los Tipos de estatus de inventario de bienes"""
-    _name = 'tipo_estatus_inventario'
-    _rec_name = 'nom_estatus'
-    nom_estatus = fields.Char('Nombre del Estatus del Inventario',size=100,required=True, help='Registra el Nombre del Movimiento')
-    cod_estatus = fields.Char('Codigo del Estatus del Inventario',size=100, required=True, help='Registra el Codigo del Estatus de Inventario')
-    _sql_constraints = [('nom_estatus', 'unique(nom_estatus)', 'El Nombre del Estatus del Inventario debe ser Unico!')]  
-

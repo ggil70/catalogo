@@ -996,22 +996,15 @@
 
 
   
-
+<!-- MEnu actual -->
   
          
     <menuitem name="Catalogo Interno de Bienes" id="menu_c" web_icon="catalogo,static/description/catalogo.jpeg"/>
-
-        
-	
-
-
 
      	<menuitem
             id = "menu_cat_in"
             parent="menu_c"
             name=" Catalogo Interno de Bienes"/>
-
-
      				<menuitem name="Grupo de Bienes" id="menu_grupo_bien" parent="menu_cat_in" action="action_grupo_bien"/>
 					<menuitem name="Clasificador de Bienes" id="menu_clasificador_bien"  parent="menu_cat_in" action="action_clasificador_bien"/>
 					<menuitem name="Modelo de Bienes" id="menu_modelo_bien"  parent="menu_cat_in" action="action_modelo_bien"/>
@@ -1021,8 +1014,18 @@
 					<menuitem name="Marcas del Bien" id="menu_marcas"  parent="menu_cat_in" action="action_marcas"/>
 					<menuitem name="Modelo de Fabrica del Bien" id="menu_modelo_fab"  parent="menu_cat_in" action="action_modelo_fab"/>
                     <menuitem name="Ubicacion Fisica" id="menu_ubicafi" parent="menu_cat_in" action="action_ubicacion_fisica" />
-                    <menuitem name="Tipo de Estatus de Inventario" id="menu_estasu_inventa"  parent="menu_cat_in" action="action_tipo_estatus_inventario"/>
+                    
                  
+
+     	<menuitem
+            id = "menu_inventario"
+            parent="menu_c"
+            name=" Configuración Inventario"/>
+
+			<menuitem name="Tipo de Estatus de Inventario" id="menu_estasu_inventa"  parent="menu_inventario" action="action_tipo_estatus_inventario"/>
+
+
+<!-- Fin del menu actual -->
 
 
 

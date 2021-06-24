@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<odoo>
+	<data>
+        <report 
+            id = "accion_reporte_material_bien"
+            string = "Listado Material Del Bien."
+            model = "material"
+            report_type = "qweb-html"
+            name = "catalogo.material_bien_template"
+            menu =" True" 
+        />
+
+		<template id="material_bien_template" name="Listado Material Del Bien">
+			<t t-call="web.html_container">
+                <t t-call="web.external_layout"> 
+                <t t-set='linea' t-value='0'/>
+                <t t-set='swPagina' t-value='0'/>
+                <t t-set='nroRegistro' t-value='0'/>
+                
+				<t t-foreach="docs" t-as="o">
+                        <div class="page"> 
+                        <t t-set='linea' t-value='linea+1'/>
+                        <t t-set='nroRegistro' t-value='nroRegistro+1'/>
+                        
+                        <t t-if='swPagina==0'>
+                            <t t-set='swPagina' t-value='1'/>
+                            <p style="font-size=14px; font-weight:700; text-align:center">Listado Material Del Bien</p> 
+    						<table  width="100%" style="border-collapse:collapse;">
+    						<tr>
+    							<td style="width:5%;background:#D7D7D7;text-align: center; border: 1px solid black;">
+    								 <p style="margin-top:1px; margin-bottom:1px;font-weight:700">N°</p> 
+    							</td>
+								
+    						    <td style="width:10%; background:#D7D7D7;text-align: center; border: 1px solid black;">
+    							    <p style="margin-top:1px; margin-bottom:1px; font-weight:700">Código</p> 
+    							</td>
+    							<td style="width:85%; background:#D7D7D7;text-align: center; border: 1px solid black;">
+    							    <p style="margin-top:1px; margin-bottom:1px;font-weight:700">Material del Bien</p> 
+    						    </td>
+    						</tr>
+                            </table>
+    						    
+                        </t>
+    						    <table width="100%" style="border-collapse:collapse;">
+    							    <tr>
+    							        <td style="width:5%; text-align:center; border: 1px solid black;">
+    							    		 <span t-esc="nroRegistro" style="font-size:12px"/>
+    							        </td>
+    							        <td style="width:10%; text-align:center; border: 1px solid black;">
+    							    		<span t-field='o.material_codigo' style="font-size:12px"/>
+    							        </td >
+                                        <td style="width:85%; border: 1px solid black;">
+    							    		 &amp;nbsp;<span t-field='o.material_nombre' style="font-size:12px"/>
+    							        </td>
+    							    </tr>
+                                </table>
+
+
+                        <t t-if='linea==30'>
+                            <div style='page-break-after: always;'></div>                                       
+                            <t t-set='swPagina' t-value='0'/>
+                            <t t-set='linea' t-value='0'/>      
+                        </t>         
+
+    
+</div>                    
+                </t>  
+      
+				</t> 	
+			</t>		
+		</template>
+	</data>
+</odoo>

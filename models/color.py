@@ -45,6 +45,7 @@ class color(models.Model):
     _name = 'color'
     #_rec_name = 'codigo_color'
     _rec_name = 'color_nombre'
+    _order = 'color_nombre'
     
 
     color_codigo = fields.Char(string='Codigo del Color',

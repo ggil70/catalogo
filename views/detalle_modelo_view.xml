@@ -14,17 +14,17 @@
             <form string="modelo_bien">
 			  <sheet>
 				<notebook>
-				  <page string="Modelos de Bienes">	    
+				  <page string="Detalle Modelo Del Bienes">	    
 					<group col="4" colspan="2">
-
-                        <field name="grupo_bien_id"/>
-                        <field name="grupo_bien_codigo" readonly="True" force_save="1"/>      
-						<field name="clasificador_id" select="0"/>
-                        <field name="clasificador_codigo" readonly="True" force_save="1"/>
-                        <field name="modelo_id" select="2"/>
-                        <field name="modelo_codigo" readonly="True" force_save="1"/>
                         <field name="detalle_modelo_codigo" readonly="True" force_save="1"/>
                         <field name="detalle_modelo_nombre" select="2"/>
+                        <field name="grupo_bien_id"/>
+                        <field name="grupo_bien_codigo" readonly="True" force_save="1" invisible="True"/>      
+						<field name="clasificador_id" select="0"/>
+                        <field name="clasificador_codigo" readonly="True" force_save="1" invisible="True"/>
+                        <field name="modelo_id" select="2"/>
+                        <field name="modelo_codigo" readonly="True" force_save="1" invisible="True"/>
+
 						
 					</group>
 				  </page>
@@ -39,15 +39,15 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="detalle_modelo_bien">
-
-                <field name="grupo_bien_id"/>
-                <field name="grupo_bien_codigo"/>
-                <field name="clasificador_id"/>
-                <field name="clasificador_codigo"/>
-                <field name="modelo_id"/>
-                <field name="modelo_codigo"/> 
                 <field name="detalle_modelo_codigo"/>
                 <field name="detalle_modelo_nombre"/>
+                <field name="grupo_bien_id"/>
+                <!--<field name="grupo_bien_codigo"/>-->
+                <field name="clasificador_id"/>
+                <!--<field name="clasificador_codigo"/>-->
+                <field name="modelo_id"/>
+                <!--<field name="modelo_codigo"/>--> 
+
                
             </tree>
         </field>
